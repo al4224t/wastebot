@@ -7,9 +7,6 @@
     Jonathan Grizou, The Cronin Group, University of Glasgow
 
     Stepper motor pipetting system
-	
-	July 2018:
-	Slightly modified for replacement 3D printed pipette
 """
 
 class Pipette(object):
@@ -20,21 +17,20 @@ class Pipette(object):
         self.empty_level = empty_level
         self.total_volume = total_volume
         self.current_volume = 0
-        #self.home_volume = -10000 # uL
+        self.home_volume = -1000 # uL
         self.init()
         self.axis.linear_actuator.set_current_position(0)
 
     def home(self, wait=True):
-        #home_move_position = self.volume_to_position(self.home_volume)
-        #home_move_step = self.axis.position_to_step(home_move_position)
-        #self.axis.linear_actuator.move(home_move_step, wait=True)
-        #self.axis.linear_actuator.set_current_position(0)
-		self.axis.home()
-		self.current_volume = 0
+        home_move_position = self.volume_to_position(self.home_volume)
+        home_move_step = self.axis.position_to_step(home_move_position)
+        self.axis.linear_actuator.move(home_move_step, wait=True)
+        self.axis.linear_actuator.set_current_position(0)
+        self.axis.initialized = True
+        self.current_volume = 0
 
     def init(self):
-		self.axis.initialize()
-		self.current_volume = 0
+        self.home()
 
     def is_empty(self):
         return self.current_volume == 0
@@ -65,11 +61,8 @@ class Pipette(object):
         self.current_volume = volume_in_uL
 
     def aspirate(self, volume_in_uL, wait=True):
-		if volume_in_uL <= (self.total_volume - self.current_volume):
-			self.go_to_volume(self.current_volume + volume_in_uL, wait=wait)
-			return 'Volume {}uL aspirated into pipette'.format(volume_in_uL)
-		else:
-			raise Exception('Not enough space in pipette to aspirate {}uL'.format(volume_in_uL))
+        self.go_to_volume(self.current_volume + volume_in_uL, wait=wait)
+        return 'Volume {}uL aspirated into pipette'.format(volume_in_uL)
 
     def dispense(self, volume_in_uL, wait=True):
         if volume_in_uL <= self.current_volume:
@@ -77,13 +70,3 @@ class Pipette(object):
             return 'Volume {}uL dispensed from pipette'.format(volume_in_uL)
         else:
             raise Exception('Not enough in pipette to dispense {}uL'.format(volume_in_uL))
-			
-	def speed(self, uL_per_second):
-		self.wait_until_idle
-		step_per_sec = self.volume_to_position(uL_per_second)
-		self.axis.linear_actuator.set_max_speed(step_per_sec)
-		
-	def acceleration(self, uL_per_sec_sq):
-		self.wait_until_idle
-		step_per_sec_sq = self.volume_to_position(uL_per_sec_sq)
-		self.axis.linear_actuator.set_acceleration(step_per_sec_sq)

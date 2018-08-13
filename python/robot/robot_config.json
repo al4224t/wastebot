@@ -5,7 +5,10 @@
     },
     {
       "port": "COM14"
-    }
+    },
+	{
+	  "port": "COM17"
+	}
   ],
   "devices": {
     "X": {
@@ -21,8 +24,8 @@
       },
       "axis": {
         "mm_per_step": 0.00935,
-        "min": 0,
-        "max": 309
+        "min": 100000,
+        "max": 100000
       }
     },
     "Y": {
@@ -62,17 +65,33 @@
     "P": {
       "command_id": "P",
       "config": {
-        "reverted_switch": false,
-        "enabled_acceleration": false,
-        "speed": 1000,
-        "homing_speed": 1000,
-        "max_speed": 1000,
-        "acceleration": 500
+        "reverted_switch": true,
+        "enabled_acceleration": true,
+        "speed": 6000,
+        "homing_speed": 2000,
+        "max_speed": 6000,
+        "acceleration": 2000
       },
       "axis": {
-        "ul_per_step": 0.763,
+        "ul_per_step": 0.021215,
         "min": 0,
-        "max": 800
+        "max": 1000
+      }
+    },
+    "S": {
+      "command_id": "S",
+      "config": {
+        "reverted_switch": true,
+        "enabled_acceleration": true,
+        "speed": 6000,
+        "homing_speed": 1000,
+        "max_speed": 6000,
+        "acceleration": 2000
+      },
+      "axis": {
+		"deg_per_step": 0.1125,
+		"min": -100000,
+		"max": 100000
       }
     }
   }
