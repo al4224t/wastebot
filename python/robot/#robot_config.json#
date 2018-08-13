@@ -1,0 +1,75 @@
+{
+  "ios" : [
+    {
+      "port": "/dev/ttyACM0"
+    },
+    {
+      "port": "/dev/ttyACM1"
+    },
+    {
+      "port": "/dev/ttyACM2"
+    },
+    {
+      "port": "/dev/ttyACM3"
+    },
+    {
+      "port": "/dev/ttyACM4"
+    },
+    {
+      "port": "/dev/ttyACM5"
+    }
+  ],
+  "devices": {
+    "X": {
+      "command_id": "X",
+      "config": {
+        "reverted_switch": true,
+        "enabled_acceleration": false,
+        "reverted_direction": true,
+        "speed": 4000,
+        "homing_speed": 3000,
+        "max_speed": 6000,
+        "acceleration": 2000
+      },
+      "axis": {
+        "mm_per_step": 0.00935,
+        "min": 0,
+        "max": 309
+      }
+    },
+    "Y": {
+      "command_id": "Y",
+      "config": {
+        "reverted_switch": true,
+        "enabled_acceleration": false,
+        "reverted_direction": true,
+        "speed": 3000,
+        "homing_speed": 3000,
+        "max_speed": 6000,
+        "acceleration": 2000
+      },
+      "axis": {
+        "mm_per_step": 0.00935,
+        "min": 0,
+        "max": 525
+      }
+    },
+    "Z": {
+      "command_id": "Z",
+      "config": {
+        "reverted_switch": true,
+        "enabled_acceleration": false,
+        "reverted_direction": true,
+        "speed": 2000,
+        "homing_speed": 1000,
+        "max_speed": 6000,
+        "acceleration": 2000
+      },
+      "axis": {
+        "mm_per_step": 0.00125,
+        "min": 0,
+        "max": 50
+      }
+    }
+  }
+}
