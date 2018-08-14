@@ -78,12 +78,10 @@ class Pipette(object):
         else:
             raise Exception('Not enough in pipette to dispense {}uL'.format(volume_in_uL))
 			
-	def speed(self, uL_per_second):
+	def speed(self, steps_per_sec):
 		self.wait_until_idle
-		step_per_sec = self.volume_to_position(uL_per_second)
-		self.axis.linear_actuator.set_max_speed(step_per_sec)
+		self.axis.linear_actuator.set_max_speed(steps_per_sec)
 		
-	def acceleration(self, uL_per_sec_sq):
+	def acceleration(self, steps_per_sec_sq):
 		self.wait_until_idle
-		step_per_sec_sq = self.volume_to_position(uL_per_sec_sq)
-		self.axis.linear_actuator.set_acceleration(step_per_sec_sq)
+		self.axis.linear_actuator.set_acceleration(steps_per_sec_sq)

@@ -127,15 +127,13 @@ class Shaker(object):
 		#current_position = self.get_current_position()
 		self.rotate_to(self.current_position + delta_angle_in_degrees, wait=wait, force=force)
 		
-	def speed(self, deg_per_sec):
+	def speed(self, steps_per_sec):
 		self.wait_until_idle
-		step_per_sec = self.angle_to_step(deg_per_sec)
-		self.linear_actuator.set_max_speed(step_per_sec)
+		self.linear_actuator.set_max_speed(steps_per_sec)
 		
-	def acceleration(self, deg_per_sec_sq):
+	def acceleration(self, steps_per_sec_sq):
 		self.wait_until_idle
-		step_per_sec_sq = self.angle_to_step(deg_per_sec_sq)
-		self.linear_actuator.set_acceleration(step_per_sec_sq)
+		self.linear_actuator.set_acceleration(steps_per_sec_sq)
 
 	def stop(self):
 		"""
