@@ -14,7 +14,7 @@
 #
 import os
 import sys
- sys.path.insert(0,"C:\Users\turbidostat\Desktop\wastebot\wastebot_complete\software\python")
+sys.path.insert(0,"C:\Users\turbidostat\Desktop\wastebot\wastebot_complete\software\python")
 # sys.path.insert(0, os.path.abspath('.'))
 
 
