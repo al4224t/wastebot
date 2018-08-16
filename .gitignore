@@ -1,4 +1,6 @@
 /python/*
+/library/commanduino/docs
+/library/commanduino/readme.md
 !/python/robot
 !/python/procedures
 !/python/documentation
