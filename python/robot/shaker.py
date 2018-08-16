@@ -93,7 +93,7 @@ class Shaker(object):
 		#make this the new zero point
 		self.current_position = 0
 		
-	def shake(self, shake_angle, n_shakes, interval_angle, n_sets)
+	def shake(self, shake_angle, n_shakes, interval_angle, n_sets):
 		for x in range(0, n_sets)
 			for y in range(0, n_shakes)
 				self.rotate(shake_angle)
