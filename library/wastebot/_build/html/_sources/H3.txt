@@ -1,0 +1,9 @@
+Additional improvements (Hardware)
+==================================
+
+Replacing the power supply wire and its terminals
+-------------------------------------------------
+
+Currently, we're using the red and black wires for connecting the heatbed, RAMPS board and the power supply.
+Its cross sectional area is 3.0mm\ :sup:`2`\.
+

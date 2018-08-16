@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>wastebot.heatbed.simulation package &mdash; Wastebot 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Wastebot 0.1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Wastebot
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">wastebot.heatbed.simulation package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-wastebot.heatbed.simulation.heatbed">wastebot.heatbed.simulation.heatbed module</a></li>
+<li><a class="reference internal" href="#module-wastebot.heatbed.simulation">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Wastebot</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>wastebot.heatbed.simulation package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/docs/apis/wastebot.heatbed.simulation.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="wastebot-heatbed-simulation-package">
+<h1>wastebot.heatbed.simulation package<a class="headerlink" href="#wastebot-heatbed-simulation-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-wastebot.heatbed.simulation.heatbed">
+<span id="wastebot-heatbed-simulation-heatbed-module"></span><h2>wastebot.heatbed.simulation.heatbed module<a class="headerlink" href="#module-wastebot.heatbed.simulation.heatbed" title="Permalink to this headline">¶</a></h2>
+<p>Module for imprementing the virtual heatbed.</p>
+<dl class="class">
+<dt id="wastebot.heatbed.simulation.heatbed.Heatbed">
+<em class="property">class </em><code class="descclassname">wastebot.heatbed.simulation.heatbed.</code><code class="descname">Heatbed</code><span class="sig-paren">(</span><em>init_tmp</em>, <em>capacity</em>, <em>surf_area</em>, <em>init_power</em>, <em>max_power</em><span class="sig-paren">)</span><a class="headerlink" href="#wastebot.heatbed.simulation.heatbed.Heatbed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Virtual heatbed class.</p>
+<p>The instance of this class represents a virtual heatbed.
+This instance reads the input power and calculated the temperature every time.
+In this calculation, this class uses the Newton&#8217;s law of cooling to estimate the heat loss amount.</p>
+<p>In addition, this class can be called from wastebot.heatbed.simulation module.
+(Please see the &#8220;Examples&#8221; section for details.)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>init_tmp</strong> (<em>int or float</em>) &#8211; The initial temperature of the virtual heatbed (unit: °C).</li>
+<li><strong>capacity</strong> (<em>int or float</em>) &#8211; The heat capacity of the virtual heatbed (unit: J/K).</li>
+<li><strong>surf_area</strong> (<em>int ot float</em>) &#8211; The surface area of the virtual heatbed (unit: m^2).</li>
+<li><strong>init_power</strong> (<em>int ot float</em>) &#8211; The initail input power of the virtual heatbed (unit: W). You must set the value within the range (0, max_power].
+Otherwise, this class throw ValueError.</li>
+<li><strong>max_power</strong> (<em>int ot float</em>) &#8211; The max input power of the virtual heatbed (unit: W).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">wastebot.heatbed.simulation</span> <span class="k">import</span> <span class="n">Heatbed</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>Newton&#8217;s law of cooling</strong></p>
+<div class="math">
+<p><img src="../../_images/math/3384d6104f100f30c53013dcc94ccb92f1596b32.png" alt="-\frac{dQ}{dt} = \alpha S \left( T - T_{m} \right)"/></p>
+</div><p>Note that <img class="math" src="../../_images/math/5ec053cf70dc1c98cc297322250569eda193e7a4.png" alt="t"/> represents the time.</p>
+<ul class="last simple">
+<li><img class="math" src="../../_images/math/331157c6afbd113256867fd408d80277d1a24756.png" alt="Q"/> is the thermal energy in the solid (unit: joule).</li>
+<li><img class="math" src="../../_images/math/877d234f4cec6974ce218fc2e975a486a7972dfd.png" alt="\alpha"/> is the heat transfer coefficient of the medium (unit: W/(m^2 * K).</li>
+<li><img class="math" src="../../_images/math/1dbc400fcc213305415872f9f625cd2828f97a00.png" alt="S"/> is the surface area of the solid.</li>
+<li><img class="math" src="../../_images/math/f2d283a2071f9d043c9e0b0f794a8880fa0d3ce9.png" alt="T"/> is the temperature of the the solid (unit: K).</li>
+<li><img class="math" src="../../_images/math/ed2777deb5ba863453fd8d6350f95b5d7186bbb3.png" alt="T_{m}"/> is the temperature of the medium (unit: K).</li>
+</ul>
+</div>
+<dl class="attribute">
+<dt id="wastebot.heatbed.simulation.heatbed.Heatbed.capacity">
+<code class="descname">capacity</code><a class="headerlink" href="#wastebot.heatbed.simulation.heatbed.Heatbed.capacity" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>The heat capacity of the virtual heatbed. (unit</em> &#8211; J/K)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="wastebot.heatbed.simulation.heatbed.Heatbed.judge_power">
+<em class="property">classmethod </em><code class="descname">judge_power</code><span class="sig-paren">(</span><em>power</em>, <em>max_power</em><span class="sig-paren">)</span><a class="headerlink" href="#wastebot.heatbed.simulation.heatbed.Heatbed.judge_power" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function judge which the &#8220;power&#8221; is within the range (0, max_power] or not.
+If the &#8220;power&#8221; is within this range, this function returns True.
+If the &#8220;power&#8221; isn&#8217;t within this range, this function returns False.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>result</strong> &#8211; The result of the judgement.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="wastebot.heatbed.simulation.heatbed.Heatbed.max_power">
+<code class="descname">max_power</code><a class="headerlink" href="#wastebot.heatbed.simulation.heatbed.Heatbed.max_power" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>The max input power of heatbed. (unit</em> &#8211; W)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="wastebot.heatbed.simulation.heatbed.Heatbed.power">
+<code class="descname">power</code><a class="headerlink" href="#wastebot.heatbed.simulation.heatbed.Heatbed.power" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Present input power of ths virtual heatbed. (unit</em> &#8211; W)</p>
+<p>If you want to change this value, you must set the value within the range (0, max_power].
+Otherwise, this instance throw ValueError.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="wastebot.heatbed.simulation.heatbed.Heatbed.surf_area">
+<code class="descname">surf_area</code><a class="headerlink" href="#wastebot.heatbed.simulation.heatbed.Heatbed.surf_area" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>The surf area of the virtual heatbed. (unit</em> &#8211; m^2)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="wastebot.heatbed.simulation.heatbed.Heatbed.tmp">
+<code class="descname">tmp</code><a class="headerlink" href="#wastebot.heatbed.simulation.heatbed.Heatbed.tmp" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Present temperature of the virtual heatbed (unit</em> &#8211; °C).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="wastebot.heatbed.simulation.heatbed.Heatbed.update_tmp">
+<code class="descname">update_tmp</code><span class="sig-paren">(</span><em>duration</em>, <em>medium_tmp</em>, <em>medium_htc</em><span class="sig-paren">)</span><a class="headerlink" href="#wastebot.heatbed.simulation.heatbed.Heatbed.update_tmp" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function updates the temprature of the virtual heatbed.
+This function uses the Newton&#8217;s law of cooling to estimate the heat loss amount.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>duration</strong> (<em>int or float</em>) &#8211; The reciprocal of the sampling frequency. (unit: sec)</li>
+<li><strong>medium_tmp</strong> (<em>int or float</em>) &#8211; The temperature of the medium. (ex. the air in the room, unit: °C)</li>
+<li><strong>medium_htc</strong> (<em>int or float</em>) &#8211; Heat transfer coefficient of the medium. (ex. the air in the room, unit: W/(m^2 * K))</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-wastebot.heatbed.simulation">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-wastebot.heatbed.simulation" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Wastebot team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

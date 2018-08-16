@@ -1,0 +1,412 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>wastebot.heatbed package &mdash; Wastebot 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Wastebot 0.1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Wastebot
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">wastebot.heatbed package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-wastebot.heatbed.controller">wastebot.heatbed.controller module</a></li>
+<li><a class="reference internal" href="#module-wastebot.heatbed.thermistor">wastebot.heatbed.thermistor module</a></li>
+<li><a class="reference internal" href="#module-wastebot.heatbed">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Wastebot</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>wastebot.heatbed package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/docs/apis/wastebot.heatbed.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="wastebot-heatbed-package">
+<h1>wastebot.heatbed package<a class="headerlink" href="#wastebot-heatbed-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="wastebot.heatbed.simulation.html">wastebot.heatbed.simulation package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wastebot.heatbed.simulation.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wastebot.heatbed.simulation.html#module-wastebot.heatbed.simulation.heatbed">wastebot.heatbed.simulation.heatbed module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wastebot.heatbed.simulation.html#module-wastebot.heatbed.simulation">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-wastebot.heatbed.controller">
+<span id="wastebot-heatbed-controller-module"></span><h2>wastebot.heatbed.controller module<a class="headerlink" href="#module-wastebot.heatbed.controller" title="Permalink to this headline">¶</a></h2>
+<p>Module for the controller of the heatbed which use the PID control method.</p>
+<dl class="class">
+<dt id="wastebot.heatbed.controller.Controller">
+<em class="property">class </em><code class="descclassname">wastebot.heatbed.controller.</code><code class="descname">Controller</code><span class="sig-paren">(</span><em>params</em><span class="sig-paren">)</span><a class="headerlink" href="#wastebot.heatbed.controller.Controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Controller class which use the PID controlling method.</p>
+<p>The instance of this class reads the prosess variable and try to
+control the manipulative variable.</p>
+<p>In addition, this class can be called from wastebot.heatbed module.
+(Please see the &#8220;Examples&#8221; section for details.)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>params</strong> (<em>dictionary</em>) &#8211; <p>The parameters of this controller class.
+This dictionary must contain the following keys and values corresponding to these keys.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>sv: float</dt>
+<dd>The set variable. In other words, target value of the manipulative variable (unit: arbitrary).
+This value must be within the pv_range.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>pv_range: numpy.ndarray[float]</dt>
+<dd>The range of the process variable (unit: arbitrary).
+This range is stored in the 1D numpy array of which storing format is [min, max].</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>mv_max: float</dt>
+<dd>The max value of the manipulative variable (unit: arbitrary).
+Note that this class is assuming that the min value of the manipulative variable is 0.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>prop_band: float</dt>
+<dd>The proportional band (unit: %). This class is assuiming that the range of prop_band must be (0, 100].</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>integral_time: float</dt>
+<dd>The integral time (unit: sampling points). This value must be a positive value.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>derivative_time: float</dt>
+<dd>The derivative time (unit: sampling points). This value must be a positive value.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>initial_pv: float</dt>
+<dd>The initial value of the process variable (unit: arbitrary). This value must be within the pv_range.</dd>
+</dl>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>PID control</strong></p>
+<ul class="simple">
+<li><strong>P</strong> is the initial of &#8220;Proportional&#8221;.</li>
+<li><strong>I</strong> is the initial of &#8220;Integral&#8221;.</li>
+<li><strong>D</strong> is the initial of &#8220;Derivative&#8221;.</li>
+</ul>
+<p>Following formula represents the PID control.</p>
+<div class="math">
+<p><img src="../../_images/math/d49429eef727086c8c5b4e3a1b7783449169851e.png" alt="e(t) = sv(t) - pv(t)"/></p>
+</div><div class="math">
+<p><img src="../../_images/math/4636ed822cce4a908103dc0398ae8a8d994e6d57.png" alt="mv(t) = \frac{100}{PB} \left[ e(t) + \frac{1}{T_{I}} \int e(t) dt + T_{D} \frac{d}{dt} e(t)  \right]"/></p>
+</div><p>Note that <img class="math" src="../../_images/math/5ec053cf70dc1c98cc297322250569eda193e7a4.png" alt="t"/> represents the time.</p>
+<ul class="last simple">
+<li><img class="math" src="../../_images/math/5e60b43384da6fe09f8717bbff8cef1d1d20f6f5.png" alt="sv(t)"/> is the set variable. In other words, target value of the manipulative variable.</li>
+<li><img class="math" src="../../_images/math/1841dd1d4faf0bd0a5f7da4c14d4c5cf9cfe09d1.png" alt="pv(t)"/> is the process variable. For example, temperature and degree etc.</li>
+<li><img class="math" src="../../_images/math/393949cebeded55cacd4d7e317297a3d1d058a75.png" alt="e(t)"/> is the error between sv and pv.</li>
+<li><img class="math" src="../../_images/math/59d31e33e2a18809254aeafb2a5489d6c7889709.png" alt="mv(t)"/> is the manipulative variable. For example, power and torque etc.</li>
+<li><img class="math" src="../../_images/math/76c1634bb1750dbdb4d633629cebe49da3fa2501.png" alt="PB"/> is the proportional band (unit: %).</li>
+<li><img class="math" src="../../_images/math/b002f96cc21a6797c09d1e45b53130b3a367550f.png" alt="T_{I}"/> is the integral time.</li>
+<li><img class="math" src="../../_images/math/634f88e012e1d8e442f87250dca610225ba8684f.png" alt="T_{D}"/> is the derivative time.</li>
+</ul>
+</div>
+<dl class="attribute">
+<dt id="wastebot.heatbed.controller.Controller.mv">
+<code class="descname">mv</code><a class="headerlink" href="#wastebot.heatbed.controller.Controller.mv" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Present manipulative variable (unit</em> &#8211; arbitrary).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="wastebot.heatbed.controller.Controller.pv">
+<code class="descname">pv</code><a class="headerlink" href="#wastebot.heatbed.controller.Controller.pv" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Present process variable (unit</em> &#8211; arbitrary). Note that if you change the present pv,
+the mv is updated.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="wastebot.heatbed.controller.Controller.sv">
+<code class="descname">sv</code><a class="headerlink" href="#wastebot.heatbed.controller.Controller.sv" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Present set variable (unit</em> &#8211; arbitrary). Note that if you change the sv,
+the integrated error is reseted and the mv is updated.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-wastebot.heatbed.thermistor">
+<span id="wastebot-heatbed-thermistor-module"></span><h2>wastebot.heatbed.thermistor module<a class="headerlink" href="#module-wastebot.heatbed.thermistor" title="Permalink to this headline">¶</a></h2>
+<p>Module for processing the output of the thermistor.</p>
+<dl class="class">
+<dt id="wastebot.heatbed.thermistor.ThermProc">
+<em class="property">class </em><code class="descclassname">wastebot.heatbed.thermistor.</code><code class="descname">ThermProc</code><span class="sig-paren">(</span><em>init_adc_outputs</em>, <em>rt</em>, <em>sh_params</em>, <em>rd</em>, <em>tc=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#wastebot.heatbed.thermistor.ThermProc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Thermistor processor class.</p>
+<p>The instance of this class reads the output of A/D converter
+which is connected to the thermistor.
+After that, this instance calculates the temperature
+via &#8220;Steinhart–Hart equation&#8221;.</p>
+<p>In addition, this class can be called from wastebot.heatbed module.
+(Please see the &#8220;Examples&#8221; section for details.)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>init_adc_outputs</strong> (<em>numpy.ndarray[float]</em>) &#8211; Initial A/D converter outputs which are stored in the 1D numpy array.
+The number of elements in this array corresponds to the length of moving averaging filter.
+In addition, this class is assuming that the range of these value is 0~1024(10bit, unit: arbitrary).</li>
+<li><strong>rt</strong> (<em>int ot float</em>) &#8211; The resistance of the thermistor at 25°C (unit: ohm).</li>
+<li><strong>sh_params</strong> (<em>dictionary</em>) &#8211; The parameters of &#8220;Steinhart–Hart&#8221; equation for the thermistor.
+This dictionary must contain the keys: &#8220;A&#8221;, &#8220;B&#8221;, &#8220;C&#8221; and values corresponding to these keys.</li>
+<li><strong>rd</strong> (<em>int or float</em>) &#8211; The resistance of the resistor in the voltage divider (unit: ohm).</li>
+<li><strong>tc</strong> (<em>int of float</em>) &#8211; The correction value of temperature (unit: °C, optional). Default value is 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>Steinhart–Hart equation</strong>
+(John S. Steinhart and Stanley R. Hart, 1968)</p>
+<div class="math">
+<p><img src="../../_images/math/6b5fe77223f778c5e1429a9176ed4126ae87a9f1.png" alt="\frac{1}{T} = A + B  * \ln{R_{therm}} + C * \left[ \ln{R_{therm}} \right] ^{3}"/></p>
+</div><ul class="last simple">
+<li><img class="math" src="../../_images/math/f2d283a2071f9d043c9e0b0f794a8880fa0d3ce9.png" alt="T"/> is the thermodynamic temperature of the thermistor.</li>
+<li><img class="math" src="../../_images/math/b1271ee11688ae24454984795310db28542ba280.png" alt="R_{therm}"/> is the resistance of the thermistor.</li>
+<li><img class="math" src="../../_images/math/462e800ca76a62c6d1b97625a957fc0b7d7a7ce9.png" alt="A, B, C"/> are the parameters of the Steinhart–Hart equation.</li>
+</ul>
+</div>
+<dl class="attribute">
+<dt id="wastebot.heatbed.thermistor.ThermProc.adc_output">
+<code class="descname">adc_output</code><a class="headerlink" href="#wastebot.heatbed.thermistor.ThermProc.adc_output" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Filtered output of A/D converter (unit</em> &#8211; arbitrary).
+Currently, we&#8217;re using the moving average filter.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="wastebot.heatbed.thermistor.ThermProc.read_adc_output">
+<code class="descname">read_adc_output</code><span class="sig-paren">(</span><em>adc_output</em><span class="sig-paren">)</span><a class="headerlink" href="#wastebot.heatbed.thermistor.ThermProc.read_adc_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function reads the new output of A/D converter (unit: arbitrary).
+This function is assuming that the range of this value is 0~1024.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>adc_outputs</strong> (<em>float</em>) &#8211; Output of A/D converter. (10bit value: 0~1024)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="wastebot.heatbed.thermistor.ThermProc.temperature">
+<code class="descname">temperature</code><a class="headerlink" href="#wastebot.heatbed.thermistor.ThermProc.temperature" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Calculated temperature from outputs of A/D converter (unit</em> &#8211; °C).
+This class uses &#8220;Steinhart–Hart equation&#8221;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="wastebot.heatbed.thermistor.ThermProc.therm_rss">
+<code class="descname">therm_rss</code><a class="headerlink" href="#wastebot.heatbed.thermistor.ThermProc.therm_rss" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Present resistance of thermistor (unit</em> &#8211; ohm).</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-wastebot.heatbed">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-wastebot.heatbed" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Wastebot team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

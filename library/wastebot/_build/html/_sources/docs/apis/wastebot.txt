@@ -1,0 +1,17 @@
+wastebot package
+================
+
+Subpackages
+-----------
+
+.. toctree::
+
+    wastebot.heatbed
+
+Module contents
+---------------
+
+.. automodule:: wastebot
+    :members:
+    :undoc-members:
+    :show-inheritance:

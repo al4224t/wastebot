@@ -1,0 +1,37 @@
+wastebot.heatbed package
+========================
+
+Subpackages
+-----------
+
+.. toctree::
+
+    wastebot.heatbed.simulation
+
+Submodules
+----------
+
+wastebot.heatbed.controller module
+----------------------------------
+
+.. automodule:: wastebot.heatbed.controller
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+wastebot.heatbed.thermistor module
+----------------------------------
+
+.. automodule:: wastebot.heatbed.thermistor
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: wastebot.heatbed
+    :members:
+    :undoc-members:
+    :show-inheritance:

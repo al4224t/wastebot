@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hardware &mdash; Wastebot 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Wastebot 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Heatbed" href="Heatbed_master.html"/>
+        <link rel="next" title="Software" href="H2.html"/>
+        <link rel="prev" title="Heatbed" href="Heatbed_master.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Wastebot
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Heatbed_master.html">Heatbed</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Hardware</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-overview">Hardware overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#power-supply">Power supply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arduino-mega">Arduino Mega</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ramps1-4-controller-board">RAMPS1.4 controller board</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heatbed">Heatbed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wire-for-dc-power-supply">Wire for DC power supply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#thermistor">Thermistor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cable-for-thermistor">Cable for thermistor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#replacement-the-ptc-resettable-fuses-in-the-power-supply-box">Replacement the PTC resettable fuses in the power supply box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connection-on-the-ramps-1-4-controller-board">Connection on the RAMPS 1.4 controller board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connection-to-the-heatbed">Connection to the heatbed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="H2.html">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="H3.html">Additional improvements (Hardware)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="H4.html">Additional improvements (Software)</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Wastebot</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="Heatbed_master.html">Heatbed</a> &raquo;</li>
+      
+    <li>Hardware</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/docs/H1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hardware">
+<h1>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="hardware-overview">
+<h2>Hardware overview<a class="headerlink" href="#hardware-overview" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id2">
+<img alt="../_images/system_overview.svg" src="../_images/system_overview.svg" /><p class="caption"><span class="caption-text">Fig1: System overview</span></p>
+</div>
+<p>I will list up the components of this system below.</p>
+<div class="section" id="power-supply">
+<h3>Power supply<a class="headerlink" href="#power-supply" title="Permalink to this headline">¶</a></h3>
+<div class="figure" id="id3">
+<img alt="../_images/SR10031-40.jpg" src="../_images/SR10031-40.jpg" />
+<p class="caption"><span class="caption-text">Fig2: Power supply</span></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Product name:</th><td class="field-body">18-Port 20A 12V PSU Box</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Manufacturer:</th><td class="field-body"><a class="reference external" href="http://oyn-x.com/">OYN-X</a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Manufacturer Part No:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">PSU20-B</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Power Supply Output Type:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Fixed</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">No. of Outputs:</th><td class="field-body">18Outputs</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Input Voltage AC Min:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">190V</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Input Voltage AC Max:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">264V</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Output Voltage:</th><td class="field-body">12VDC</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Output Current:</th><td class="field-body">20A</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference download internal" href="../_downloads/2163255.pdf" download=""><code class="xref download docutils literal"><span class="pre">Datasheet</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">power</span> <span class="pre">supply</span></code></a></li>
+<li><a class="reference external" href="https://cpc.farnell.com/oyn-x/psu20-b/power-supply-18-port-20a-12v/dp/SR10031?st">power supply web page in shopping site</a></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This power supply is originally aimed at the CCTV. In addtion, it contains PTC resettable fuses for each output channels, however these resettable fuses has too small I <sub>h</sub> (hold current). Therefore, I replaced two resettable fuses for the heatbed and robot. (Detail is documented in the other section.)</p>
+</div>
+</div>
+<div class="section" id="arduino-mega">
+<h3>Arduino Mega<a class="headerlink" href="#arduino-mega" title="Permalink to this headline">¶</a></h3>
+<div class="figure" id="id4">
+<img alt="../_images/arduino.jpg" src="../_images/arduino.jpg" />
+<p class="caption"><span class="caption-text">Fig3: Arduino Mega</span></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Microcontroller:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">ATmega1280</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Operating Voltage:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">5V</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Input Voltage (recommended):</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">7-12V</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Input Voltage (limits):</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">6-20V</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Digital I/O Pins:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">54 (of which 15 provide PWM output)</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Analog Input Pins:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">16</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">DC Current per I/O Pin:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">40 mA</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">DC Current for 3.3V Pin:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">50 mA</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Flash Memory:</th><td class="field-body">128 KB of which 4 KB used by bootloader</td>
+</tr>
+<tr class="field-even field"><th class="field-name">SRAM:</th><td class="field-body">8 KB</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">EEPROM:</th><td class="field-body">4 KB</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Clock Speed:</th><td class="field-body">16 MHz</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference download internal" href="../_downloads/0900766b80e8ba22.pdf" download=""><code class="xref download docutils literal"><span class="pre">Datasheet</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">Arduino</span> <span class="pre">Mega</span></code></a></li>
+<li><a class="reference external" href="https://www.arduino.cc/en/Main/arduinoBoardMega/">Official explanation page</a></li>
+<li><a class="reference external" href="https://uk.rs-online.com/web/p/products/7154084/?grossPrice=Y&amp;cm_mmc=UK-PLA-DS3A-_-google-_-PLA_UK_EN_Semiconductors-_-Semiconductor_Development_Kits%7CProcessor_And_Microcontroller_Development_Kits-_-PRODUCT+GROUP&amp;matchtype=&amp;pla-410498058944&amp;gclid=CjwKCAjwwdTbBRAIEiwAYQf_ExCcS3f0P215kSjL54Fn61zjcYHkv7lQ--1dwCr5omzEb7-rfQ_OJxoCmEUQAvD_BwE&amp;gclsrc=aw.ds">Arduino Mega web page in shopping site</a></li>
+</ul>
+</div>
+<div class="section" id="ramps1-4-controller-board">
+<h3>RAMPS1.4 controller board<a class="headerlink" href="#ramps1-4-controller-board" title="Permalink to this headline">¶</a></h3>
+<div class="figure" id="id5">
+<img alt="../_images/3d-printer-controller-board-for-ramps-14-reprap-prusa-mendel.jpg" src="../_images/3d-printer-controller-board-for-ramps-14-reprap-prusa-mendel.jpg" />
+<p class="caption"><span class="caption-text">Fig4: RAMPS1.4 controller board</span></p>
+</div>
+<p>Feartures is below. (These features is described in <a class="reference external" href="http://ooznest.co.uk/3D-Printer-Electronic-Parts/Boards/RAMPS-14-Controller-Board">this store page</a> .)</p>
+<ul class="simple">
+<li>Interfaces with Arduino MEGA2560.</li>
+<li>Room for additional expansion boards.</li>
+<li>Up to 5 independent stepper motor driver outputs, 3 Axis + 2 Extruders, with dual motor driven Z-Axis.</li>
+<li>Compatible with Pololu A4988 and DRV8825 stepper drivers and others.</li>
+<li>6 Limit switch inputs.</li>
+<li>3 Thermistor inputs.</li>
+<li>3 PWM MOSFET&#8217;s outputs, 2 x 5A resettable fused (Extruder&#8217;s or Fans), 1 x 11A resettable fused (Heated Bed).</li>
+<li>I2C and SPI outputs</li>
+<li>LCD Screen can be connected.</li>
+<li>Additional connections available for servos, fans extenders etc.</li>
+</ul>
+<p>More details is described in the <a class="reference external" href="https://reprap.org/wiki/RAMPS_1.4">official wiki</a> . (The architecture of this board is open source.)</p>
+</div>
+<div class="section" id="heatbed">
+<h3>Heatbed<a class="headerlink" href="#heatbed" title="Permalink to this headline">¶</a></h3>
+<div class="figure" id="id6">
+<img alt="../_images/aluminium_heatbed_clipped.jpg" src="../_images/aluminium_heatbed_clipped.jpg" />
+<p class="caption"><span class="caption-text">Fig5: Aluminium Heatbed</span></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Product name:</th><td class="field-body">Aluminium PCB heat bed MK2B</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Brand:</th><td class="field-body"><a class="reference external" href="http://ooznest.co.uk/index.php">Ooznest</a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Product Code:</th><td class="field-body">HB-MK2B-ALU</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Input Voltage DC 1:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">12V</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Input Voltage DC 2:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">24V</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Resistance for DC 1(12V):</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">1.0-1.2 ohm</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Resistance for DC 2(24V):</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">3-3.4 ohm</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Power (12V):</th><td class="field-body">about 140W</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Power (24V):</th><td class="field-body">about 180W</td>
+</tr>
+</tbody>
+</table>
+<p>Note that the value of resistance is described in the <a class="reference external" href="https://reprap.org/wiki/PCB_Heatbed#MK2b_Dual_Power_Technical_Details">official wiki</a> , and the power is calculated from these resistance value and voltages. You can choose the input voltage of this heatbed, and currently, we&#8217;re using 12V as the input votage. Thus, the max input current of this heatbed is about 11A.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://ooznest.co.uk/Aluminium-PCB-Heated-Bed-MK2B">Heatbed web page in shopping site</a></li>
+<li><a class="reference external" href="https://reprap.org/wiki/PCB_Heatbed">Officeial wiki</a> (The architecture of this heatbed is open source.)</li>
+</ul>
+</div>
+<div class="section" id="wire-for-dc-power-supply">
+<h3>Wire for DC power supply<a class="headerlink" href="#wire-for-dc-power-supply" title="Permalink to this headline">¶</a></h3>
+<div class="figure" id="id7">
+<img alt="../_images/power_supply_wires.svg" src="../_images/power_supply_wires.svg" /><p class="caption"><span class="caption-text">Fig6: Wires for DC power supply</span></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Product name:</th><td class="field-body">ISO6722-1 Automotive Wire (Black/Red)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Fire Behaviour:</th><td class="field-body">Flame Retardant</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Cross Sectional Area:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">3 mm<sup>2</sup></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Core Strands:</th><td class="field-body">175/0.15 mm</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Conductor Resistance:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">6.15 ohm/km</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Minimum Operating Temperature:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">-40°C</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Maximum Operating Temperature:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">+100°C</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Sheath Colour:</th><td class="field-body">Black/Red</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Outer Sheath Material:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">PVC</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Voltage Rating:</th><td class="field-body">600 V</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Outer Diameter:</th><td class="field-body">4.1mm</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Cable Shape:</th><td class="field-body">Wire/Single Core</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Size of Strands:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">0.15 mm</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Number of Strands:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">175</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Attribute</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Product name</td>
+<td>ISO6722-1 Automotive Wire (Black/Red)</td>
+</tr>
+<tr class="row-odd"><td>Fire Behaviour</td>
+<td>Flame Retardant</td>
+</tr>
+<tr class="row-even"><td>:Cross Sectional Area</td>
+<td>3 mm <sup>2</sup></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="31%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2">Inputs</th>
+<th class="head">Output</th>
+</tr>
+<tr class="row-even"><th class="head">A</th>
+<th class="head">B</th>
+<th class="head">A or B</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="thermistor">
+<h3>Thermistor<a class="headerlink" href="#thermistor" title="Permalink to this headline">¶</a></h3>
+<div class="figure" id="id8">
+<img alt="../_images/thermistor1.jpg" src="../_images/thermistor1.jpg" />
+<p class="caption"><span class="caption-text">Fig7: Thermistor</span></p>
+</div>
+</div>
+<div class="section" id="cable-for-thermistor">
+<h3>Cable for thermistor<a class="headerlink" href="#cable-for-thermistor" title="Permalink to this headline">¶</a></h3>
+<div class="figure" id="id9">
+<img alt="../_images/thermistor_cable.jpg" src="../_images/thermistor_cable.jpg" />
+<p class="caption"><span class="caption-text">Fig8: Cable for thermistor</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="replacement-the-ptc-resettable-fuses-in-the-power-supply-box">
+<h2>Replacement the PTC resettable fuses in the power supply box<a class="headerlink" href="#replacement-the-ptc-resettable-fuses-in-the-power-supply-box" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="connection-on-the-ramps-1-4-controller-board">
+<h2>Connection on the RAMPS 1.4 controller board<a class="headerlink" href="#connection-on-the-ramps-1-4-controller-board" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="connection-to-the-heatbed">
+<h2>Connection to the heatbed<a class="headerlink" href="#connection-to-the-heatbed" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="H2.html" class="btn btn-neutral float-right" title="Software" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Heatbed_master.html" class="btn btn-neutral" title="Heatbed" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Wastebot team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

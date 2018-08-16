@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Additional improvements (Hardware) &mdash; Wastebot 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Wastebot 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Heatbed" href="Heatbed_master.html"/>
+        <link rel="next" title="Additional improvements (Software)" href="H4.html"/>
+        <link rel="prev" title="Software" href="H2.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Wastebot
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Heatbed_master.html">Heatbed</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="H1.html">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="H2.html">Software</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Additional improvements (Hardware)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#replacing-the-power-supply-wire-and-its-terminals">Replacing the power supply wire and its terminals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#replacing-the-thermistor">Replacing the thermistor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thermal-limiter-for-the-heatbed">Thermal limiter for the heatbed</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#thermal-fuse">1.Thermal fuse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dc-power-relay-and-ptc-thermistor">2. DC power relay and PTC thermistor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="H4.html">Additional improvements (Software)</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Wastebot</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="Heatbed_master.html">Heatbed</a> &raquo;</li>
+      
+    <li>Additional improvements (Hardware)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/docs/H3.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="additional-improvements-hardware">
+<h1>Additional improvements (Hardware)<a class="headerlink" href="#additional-improvements-hardware" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="replacing-the-power-supply-wire-and-its-terminals">
+<h2>Replacing the power supply wire and its terminals<a class="headerlink" href="#replacing-the-power-supply-wire-and-its-terminals" title="Permalink to this headline">¶</a></h2>
+<p>Currently, we&#8217;re using the red and black thick wires for connecting the heatbed, RAMPS board and the power supply.
+Its cross sectional area is 3.0mm<sup>2</sup>. Following are its details.</p>
+<ul class="simple">
+<li><a class="reference download internal" href="../_downloads/0900766b81513710.pdf" download=""><code class="xref download docutils literal"><span class="pre">Datasheet</span> <span class="pre">of</span> <span class="pre">these</span> <span class="pre">wire</span></code></a></li>
+<li><a class="reference external" href="https://uk.rs-online.com/web/p/automotive-wire/1225886/">Black wire web page in shopping site</a></li>
+<li><a class="reference external" href="https://uk.rs-online.com/web/p/automotive-wire/1225889/">Red wire web page in shopping site</a></li>
+</ul>
+<p>However, these wire are too thick to use present heatbed system. At first, I thought that I must split the current from the power supply into the current for the heatbed and the current for the motors. Thus, I selected the wire which can supply over 17A current. However, currently, we&#8217;re using the power supply box which contains the terminal block, so we can split the current at the inside of the power supply box. Therefore, the max currnet which is sent by the wire is 11A.</p>
+<p>Hence, following wires are more useful to our heatbed system. (Its cross sectional area is 2.0mm<sup>2</sup>. Following are its details.)</p>
+<ul class="simple">
+<li><a class="reference download internal" href="../_downloads/0900766b81513704.pdf" download=""><code class="xref download docutils literal"><span class="pre">Datasheet</span> <span class="pre">of</span> <span class="pre">these</span> <span class="pre">wire</span></code></a></li>
+<li><a class="reference external" href="https://uk.rs-online.com/web/p/automotive-wire/1225876/">New black wire web page in shopping site</a></li>
+<li><a class="reference external" href="https://uk.rs-online.com/web/p/automotive-wire/1225880/">New red wire web page in shopping site</a></li>
+</ul>
+<p>In addition, if you use these new wires, you can use <a class="reference external" href="https://uk.rs-online.com/web/p/crimp-bootlace-ferrules/1361897/">the new insulated crimp bootlace ferrule (TE Connectivity, 1-966067-6)</a>. If you use this ferrule to connect the wire to the euroblock on the RAMPS board, the connection at the euroblock become safer. (Unfortunately, present wire is too thick to use with these ferrule.)</p>
+<div class="figure" id="id1">
+<img alt="../_images/ferrule_euroblock.svg" src="../_images/ferrule_euroblock.svg" /><p class="caption"><span class="caption-text">Fig1: Insulated crimp bootlace ferrule(left) and Euroblock(right)</span></p>
+</div>
+</div>
+<div class="section" id="replacing-the-thermistor">
+<h2>Replacing the thermistor<a class="headerlink" href="#replacing-the-thermistor" title="Permalink to this headline">¶</a></h2>
+<p>Currently, we&#8217;re using the uninsulated thermistor. (This thermistor is the almost same model at the original 3D printer kit.)</p>
+<div class="figure" id="id2">
+<a class="reference internal image-reference" href="../_images/thermistor1.jpg"><img alt="../_images/thermistor1.jpg" src="../_images/thermistor1.jpg" style="width: 222.0px; height: 136.5px;" /></a>
+<p class="caption"><span class="caption-text">Fig2: Current thermistor (uninsulated)</span></p>
+</div>
+<ul class="simple">
+<li><a class="reference download internal" href="../_downloads/0900766b813c1e9d.pdf" download=""><code class="xref download docutils literal"><span class="pre">Datasheet</span> <span class="pre">of</span> <span class="pre">present</span> <span class="pre">thermistor</span></code></a></li>
+<li><a class="reference external" href="https://uk.rs-online.com/web/p/thermistors/7691931/">Present thermistor web page in shopping site</a></li>
+</ul>
+<p>However, in our experimnet environment, we must insulate thermistors. Otherwiew, the leak current will occur between the thermistors and aluminium plate on the heatbed. To make matters worse, if we don&#8217;t insulate thermistors, we can&#8217;t use these thermistors near the liquid. Therefore, currently, we&#8217;re using the PVC tape to insulate the thermistors, but that is the cause of instability in measuring.</p>
+<p>Thus, I think we should use the following new thermistor.</p>
+<div class="figure" id="id3">
+<a class="reference internal image-reference" href="../_images/thermistor2.jpg"><img alt="../_images/thermistor2.jpg" src="../_images/thermistor2.jpg" style="width: 199.5px; height: 300.0px;" /></a>
+<p class="caption"><span class="caption-text">Fig3: New thermistor (insulated)</span></p>
+</div>
+<ul class="simple">
+<li><a class="reference download internal" href="../_downloads/NTC_Mini_sensors_S861-1317170.pdf" download=""><code class="xref download docutils literal"><span class="pre">Datasheet</span> <span class="pre">of</span> <span class="pre">new</span> <span class="pre">thermistor</span></code></a></li>
+<li><a class="reference external" href="https://www.mouser.co.uk/ProductDetail/EPCOS-TDK/B57861S0104F040?qs=sGAEpiMZZMuBd0%252bwiCVS2xplhE4Sa0XN4YkdFac%2fWp8=">New thermistor web page in shopping site</a></li>
+</ul>
+<p>Note that this new thermistor is <strong>not</strong> the waterproof thermistor, so if you want to measure the temperature of the liquid directly, you must choose the other parts.</p>
+</div>
+<div class="section" id="thermal-limiter-for-the-heatbed">
+<h2>Thermal limiter for the heatbed<a class="headerlink" href="#thermal-limiter-for-the-heatbed" title="Permalink to this headline">¶</a></h2>
+<p>Currently, there are some protections for electrical accidents. For example, the resettable fuses in the power supply, insulated wires, insulated terminals, terminal blocks, and kapton tape on the heatbed. However, there is no protection for the overheat of the heatbed except the PID control program. Although you can easily set the static limit temperature in the heatbed control script, if the thermistor gets out the place or the USB cable between the arduino and the host computer is disconnected, you will lose the tharmal control of the heatbed and the overheat will occur.</p>
+<p>Therefore, some other protection for the overheat might be required. Here, I suggest the two draft solutions.</p>
+<div class="section" id="thermal-fuse">
+<h3>1.Thermal fuse<a class="headerlink" href="#thermal-fuse" title="Permalink to this headline">¶</a></h3>
+<p>First option is using the thermal fuse. When the thermal fuse detects the temperature which is over the T <sub>f</sub> (rated functioning temperature), inside component of the thermal fuse melts and the current is shutted down.</p>
+<div class="figure" id="id4">
+<img alt="../_images/thermal_fuse_image.gif" src="../_images/thermal_fuse_image.gif" />
+<p class="caption"><span class="caption-text">Fig4: Thermal fuse (<a class="reference external" href="http://www.uchihashi.co.jp/en/support/detail/about-thermal-cutoff.php">http://www.uchihashi.co.jp/en/support/detail/about-thermal-cutoff.php</a>)</span></p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Note that the thermal fuse for AC and the thermal fuse for DC are <strong>not</strong> same electrical components. The thermal fuse for DC have to prevent the electric arc, but the thermal fuse for AC don&#8217;t have to do so because there are OV points in the AC current.</p>
+</div>
+<p>Unfortunately, I couldn&#8217;t find out the actual product suitable for our system except in the some company web sites in Japan and Alibaba.com. (However, the products in the some company web sites in Japan and Alibaba.com have a liitle high T <sub>f</sub> , about 130°.)</p>
+<p>Following is the requirement for the thermal fuse in our system.</p>
+<ol class="arabic simple">
+<li>DC support</li>
+<li>Axial or radial type (Because we must bring these components into contact with the heatbed directly.)</li>
+<li>Its rating currnet must be over 11A.</li>
+<li>Its rating voltage must be over 12V.</li>
+<li>Its T <sub>f</sub> is suitable for our system.</li>
+</ol>
+<p>Therefore, if you want to choose this option for thermal protection, I think that you have to find out the suitable thermal fuse by contacting some companies. Alternatively, you can also purchase the chinese product at Alibaba.com and use it for our system after some test.</p>
+<p><strong>&lt;Reference links</strong> (<em>There is no need to stick to these links.</em>) <strong>&gt;</strong></p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.uchihashi.co.jp/en/product/fuse_item_37.php">Product in Uchihashi Estec Co., Ltd. web site</a></li>
+<li><a class="reference external" href="http://www.uchihashi.co.jp/en/contact/">Contact form in Uchihashi Estec Co., Ltd. web site</a></li>
+<li><a class="reference external" href="https://www.tamura-ss.co.jp/jp/products/electronic_components/download/thermal_links/pdf/axialtype.pdf">Product list in TAMURA Corp. web site</a></li>
+<li><a class="reference external" href="https://www.tamura-ss.co.jp/en/products/electronic_components/category/thermal_links/inquiry.html">Contact information of the the thermal product of TAMURA Corp.</a></li>
+</ul>
+</div>
+<div class="section" id="dc-power-relay-and-ptc-thermistor">
+<h3>2. DC power relay and PTC thermistor<a class="headerlink" href="#dc-power-relay-and-ptc-thermistor" title="Permalink to this headline">¶</a></h3>
+<p>Second option is using the DC power relay and PTC thermistor. When the temperature of the PTC thermistor exceeds the T <sub>s</sub> (switch temperature), its resistance will rapidly increase, so that you can use this component to detect the limit temperature. The DC power relay is the component for switching high DC current in a circuit.</p>
+<p>Following is one of the DC power relay suitable for our system. (Its contact configuration is SPNO, Single-Pole Normally Open.)</p>
+<ul class="simple">
+<li><a class="reference download internal" href="../_downloads/0900766b81420805.pdf" download=""><code class="xref download docutils literal"><span class="pre">Datasheet</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">DC</span> <span class="pre">power</span> <span class="pre">relay</span></code></a></li>
+<li><a class="reference external" href="https://uk.rs-online.com/web/p/non-latching-relays/6838719/">DC power relay web page in shopping site</a></li>
+</ul>
+<div class="figure" id="id5">
+<img alt="../_images/DC_power_relay.jpg" src="../_images/DC_power_relay.jpg" />
+<p class="caption"><span class="caption-text">Fig5: DC power relay</span></p>
+</div>
+<p>Following is one of the PTC thermistor for temperature sensor. (Its sensing temperature is 60°C.)</p>
+<ul class="simple">
+<li><a class="reference external" href="https://uk.rs-online.com/web/p/thermistors/7855775/">PTC thermistor web page in shopping site</a></li>
+<li><a class="reference external" href="https://www.murata.com/en-global/products/productdetail?cate=luPTCforTempeSenso&amp;partno=PTFL04BH222Q2N34B0&amp;intcid5=com_xxx_xxx_cmn_hd_xxx">PTC thermistor web page in its company</a></li>
+</ul>
+<div class="figure" id="id6">
+<img alt="../_images/Positor.jpg" src="../_images/Positor.jpg" />
+<p class="caption"><span class="caption-text">Fig6: PTC thermistor for temperature sensor</span></p>
+</div>
+<p>I think you can use these components to construct the thermal limiter circuit for the heatbed. However, if you choose this option, you have to design the new circuit for thermal limit unlike the thermal fuse case.</p>
+<p>The comparison between option1 and option2 is as follows.</p>
+<ul class="simple">
+<li>Advantage of option1<ul>
+<li>You can implement it comparatively easy at first.</li>
+<li>You don&#8217;t have to design new thermal limiter circuit.</li>
+</ul>
+</li>
+<li>Disadvantage of option1<ul>
+<li>I think you can&#8217;t choose your favorite T <sub>f</sub> of the thermal fuse.</li>
+<li>The thermal fuse is the disposable component.</li>
+</ul>
+</li>
+<li>Advantage of option2<ul>
+<li>You can use DC power relay and PTC thermistor repeatedly.</li>
+<li>You can choose your favorite  T <sub>s</sub> of the PTC thermistor for temperature sensor.</li>
+</ul>
+</li>
+<li>Disadvantage of option2<ul>
+<li>You have to design the new circuit for thermal limit.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="H4.html" class="btn btn-neutral float-right" title="Additional improvements (Software)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="H2.html" class="btn btn-neutral" title="Software" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Wastebot team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

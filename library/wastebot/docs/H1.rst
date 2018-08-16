@@ -1,0 +1,187 @@
+Hardware
+=================
+
+Hardware overview
+-----------------
+
+.. figure:: system_overview.svg
+
+   Fig1: System overview
+
+I will list up the components of this system below.
+
+Power supply
+~~~~~~~~~~~~
+
+.. figure:: SR10031-40.jpg
+   
+   Fig2: Power supply
+
+:Product name: 18-Port 20A 12V PSU Box
+:Manufacturer: `OYN-X <http://oyn-x.com/>`_
+:Manufacturer Part No: PSU20-B
+:Power Supply Output Type: Fixed
+:No. of Outputs: 18Outputs
+:Input Voltage AC Min: 190V
+:Input Voltage AC Max: 264V
+:Output Voltage: 12VDC
+:Output Current: 20A
+
+* :download:`Datasheet of the power supply <2163255.pdf>`
+* `power supply web page in shopping site <https://cpc.farnell.com/oyn-x/psu20-b/power-supply-18-port-20a-12v/dp/SR10031?st>`_
+
+.. Note::
+   This power supply is originally aimed at the CCTV. In addtion, it contains PTC resettable fuses for each output channels, however these resettable fuses has too small I \ :sub:`h`\  (hold current). Therefore, I replaced two resettable fuses for the heatbed and robot. (Detail is documented in the other section.)
+
+
+Arduino Mega
+~~~~~~~~~~~~
+
+.. figure:: arduino.jpg
+   
+   Fig3: Arduino Mega
+
+:Microcontroller: ATmega1280
+:Operating Voltage: 5V
+:Input Voltage (recommended): 7-12V
+:Input Voltage (limits): 6-20V
+:Digital I/O Pins: 54 (of which 15 provide PWM output)
+:Analog Input Pins:	16
+:DC Current per I/O Pin: 40 mA
+:DC Current for 3.3V Pin: 50 mA
+:Flash Memory: 128 KB of which 4 KB used by bootloader
+:SRAM: 8 KB
+:EEPROM: 4 KB
+:Clock Speed: 16 MHz
+
+* :download:`Datasheet of the Arduino Mega <0900766b80e8ba22.pdf>`
+* `Official explanation page <https://www.arduino.cc/en/Main/arduinoBoardMega/>`_
+* `Arduino Mega web page in shopping site <https://uk.rs-online.com/web/p/products/7154084/?grossPrice=Y&cm_mmc=UK-PLA-DS3A-_-google-_-PLA_UK_EN_Semiconductors-_-Semiconductor_Development_Kits%7CProcessor_And_Microcontroller_Development_Kits-_-PRODUCT+GROUP&matchtype=&pla-410498058944&gclid=CjwKCAjwwdTbBRAIEiwAYQf_ExCcS3f0P215kSjL54Fn61zjcYHkv7lQ--1dwCr5omzEb7-rfQ_OJxoCmEUQAvD_BwE&gclsrc=aw.ds>`_
+
+RAMPS1.4 controller board
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: 3d-printer-controller-board-for-ramps-14-reprap-prusa-mendel.jpg
+   
+   Fig4: RAMPS1.4 controller board
+
+Feartures is below. (These features is described in `this store page <http://ooznest.co.uk/3D-Printer-Electronic-Parts/Boards/RAMPS-14-Controller-Board>`_ .)
+
+* Interfaces with Arduino MEGA2560.
+
+* Room for additional expansion boards.
+
+* Up to 5 independent stepper motor driver outputs, 3 Axis + 2 Extruders, with dual motor driven Z-Axis.
+
+* Compatible with Pololu A4988 and DRV8825 stepper drivers and others.
+
+* 6 Limit switch inputs.
+
+* 3 Thermistor inputs.
+
+* 3 PWM MOSFET's outputs, 2 x 5A resettable fused (Extruder's or Fans), 1 x 11A resettable fused (Heated Bed).
+* I2C and SPI outputs
+
+* LCD Screen can be connected.
+
+* Additional connections available for servos, fans extenders etc.
+
+More details is described in the `official wiki <https://reprap.org/wiki/RAMPS_1.4>`_ . (The architecture of this board is open source.)
+
+Heatbed
+~~~~~~~
+
+.. figure:: aluminium_heatbed_clipped.jpg
+   
+   Fig5: Aluminium Heatbed
+
+:Product name: Aluminium PCB heat bed MK2B
+:Brand: `Ooznest <http://ooznest.co.uk/index.php>`_
+:Product Code: HB-MK2B-ALU
+:Input Voltage DC 1: 12V
+:Input Voltage DC 2: 24V
+:Resistance for DC 1(12V): 1.0-1.2 ohm
+:Resistance for DC 2(24V): 3-3.4 ohm
+:Power (12V): about 140W
+:Power (24V): about 180W
+
+Note that the value of resistance is described in the `official wiki <https://reprap.org/wiki/PCB_Heatbed#MK2b_Dual_Power_Technical_Details>`_ , and the power is calculated from these resistance value and voltages. You can choose the input voltage of this heatbed, and currently, we're using 12V as the input votage. Thus, the max input current of this heatbed is about 11A. 
+
+* `Heatbed web page in shopping site <http://ooznest.co.uk/Aluminium-PCB-Heated-Bed-MK2B>`_ 
+* `Officeial wiki <https://reprap.org/wiki/PCB_Heatbed>`_ (The architecture of this heatbed is open source.)
+
+Wire for DC power supply
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: power_supply_wires.svg
+   
+   Fig6: Wires for DC power supply
+
+:Product name: ISO6722-1 Automotive Wire (Black/Red)
+:Fire Behaviour: Flame Retardant
+:Cross Sectional Area: 3 mm\ :sup:`2`\ 
+:Core Strands: 175/0.15 mm
+:Conductor Resistance: 6.15 ohm/km
+:Minimum Operating Temperature: -40°C
+:Maximum Operating Temperature: +100°C
+:Sheath Colour:	Black/Red
+:Outer Sheath Material: PVC
+:Voltage Rating: 600 V
+:Outer Diameter: 4.1mm
+:Cable Shape: Wire/Single Core
+:Size of Strands: 0.15 mm
+:Number of Strands: 175
+
+
+
+
+
+========================   ===================================== 
+Attribute                  Value 
+========================   ===================================== 
+Product name               ISO6722-1 Automotive Wire (Black/Red)
+Fire Behaviour             Flame Retardant
+:Cross Sectional Area      3 mm \ :sup:`2`\ 
+========================   ===================================== 
+  
+
+
+
+
+=====  =====  ====== 
+   Inputs     Output 
+------------  ------ 
+  A      B    A or B 
+=====  =====  ====== 
+False  False  False 
+True   False  True 
+False  True   True 
+True   True   True 
+=====  =====  ======
+
+
+Thermistor
+~~~~~~~~~~
+
+.. figure:: thermistor1.jpg
+   
+   Fig7: Thermistor
+
+
+Cable for thermistor
+~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: thermistor_cable.jpg
+   
+   Fig8: Cable for thermistor
+
+
+Replacement the PTC resettable fuses in the power supply box
+------------------------------------------------------------
+
+
+Connection on the RAMPS 1.4 controller board
+--------------------------------------------
+
+Connection to the heatbed
+-------------------------

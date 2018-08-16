@@ -1,0 +1,77 @@
+Additional improvements (Software)
+==================================
+
+Integration the heatbed control script and the robot control script
+-------------------------------------------------------------------
+
+Currently, the heatbed control script and the robot control script are separated.
+At a result, there are two RAMPS board and two Arduino Mega. 
+This setup is convenient to development, but you might think that we want to integrate these components in future.
+
+Here, I will list up the two obstacles to integrate these components and suggest some draft solutions.
+
+1. Adjusting the sampling rate in these two components or using the multiprocessing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Currently, we're using one sampling rate(10.0Hz) in the heatbed control script. This rate is used to measuring temperature, setting the power of heatbed, and visualizing these values. In other words, the main loop in the heatbed scrip is runing at this sampling rate. 
+
+However, I suspect that the robot control script use the other sampling rate. In robot control script, we're using multiple jupyter notebook cells and an Qt widget for dynamic visualization. Thus, I suspect that robot control script use the different sampling rate for the control section and the visualize section.
+
+Therefore, if we want to integrate the heatbet control script and the robot control script, I think you have to choose one from the following two options.
+
+* option1: Adjusting the sampling rate in these two components
+
+* option2: Using the multiprocessing
+
+The option1 is very simple way to solve this problem. If you choose this option, you have to choose only one sampling rate and use it every section in script. I show the concept of this option in Fig1.
+
+.. figure:: Fig1.svg
+   
+   Fig1: The concept of the option1.
+
+The option2 is more complex way to solove this problem, but it's more flexible than option1. I show the concept of this option in Fig2.
+
+.. figure:: Fig2.svg
+   
+   Fig2: The concept of the option2.
+
+.. Note::
+   Note that you can't use the multithreading in Python because of the GIL (Global Interpreter Lock). Thus, if you want to choose the option2, you must use the multiprocessing. In the multiprocessing, the memory spaces for each process are separated, so you might have to think the method for sharing some variables in some processes. 
+
+The comparison between option1 and option2 is as follows.
+
+* Advantage of option1
+
+  - You can implement it comparatively easy at first.
+  - You don't have to know the multiprocessing of Python.
+
+* Disadvantage of option1
+
+  - If you need to add the additional component to this system in future, total system will become more complex. (Your code may become the spaghetti code.)
+
+* Advantage of option2
+  
+  - You can separate and encapsulate the components in this system.
+  - At a result, you can add the additional component comparatively easily.
+
+* Disadvantage of option2
+  
+  - You have to know the multiprocessing of Python.
+  - Your first implementation will be more hard task.
+  - The multiprocessing require more calculation ability (CPU and RAM).
+  - If you want to share some variables in one process with the other process, you have to think the sharing method.
+  
+2. Integrating the visualization GUI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Currently, for dynamic visualization, we're using the Qt widget in the robot control script and interactive figure in jupyter notebook in the heatbed control script. However, if you want to integrate these scripts, I think you should aloso integrate the visualization GUI. There are multiple jupyter notebook cells in the robot control script, so I think the interactive figure in jupyter notebook will not work wll in the integrated script. (It's related to the cells and loops in jupyter notebook. Generally, you can't run the multiple cells in one notebook simultaneously.)
+
+Therefore, I think you should use only Qt widget for dynamic visualization in the integrated script.
+
+
+Dynamic change the set variable (target temperature) in the heatbed control program 
+-----------------------------------------------------------------------------------
+
+Currently, you can't change dynamically the set variable, in other words target temperature, in the PID control section of the heatbed control program, although the PID control class supports the set variable change. 
+
+Thus, if you implement the authentic GUI (ex. PyQt) or the webGUI and stop using the jupyter notebook, you can dynamically chage the target temperature in the heatbed control program.

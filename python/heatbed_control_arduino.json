@@ -1,0 +1,36 @@
+{
+  "ios" : [
+    {
+      "port": "/dev/tty.usbmodem1411"
+    },
+    {
+      "port": "/dev/ttyACM0"
+    },
+    {
+      "port": "/dev/ttyACM1"
+    },
+    {
+      "port": "/dev/ttyACM2"
+    },
+    {
+      "port": "COM13"
+    },
+    {
+      "port": "COM14"
+    }
+  ],
+  "devices": {
+    "read_thermistor0": {
+      "command_id": "RTM0"
+    },
+    "read_thermistor1": {
+      "command_id": "RTM1"
+    },
+    "read_thermistor2": {
+      "command_id": "RTM2"
+    },
+    "write_heatbed0": {
+      "command_id": "WHB0"
+    }
+  }
+}

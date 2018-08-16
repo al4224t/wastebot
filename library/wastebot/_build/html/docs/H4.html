@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Additional improvements (Software) &mdash; Wastebot 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Wastebot 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Heatbed" href="Heatbed_master.html"/>
+        <link rel="prev" title="Additional improvements (Hardware)" href="H3.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Wastebot
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Heatbed_master.html">Heatbed</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="H1.html">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="H2.html">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="H3.html">Additional improvements (Hardware)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Additional improvements (Software)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#integration-the-heatbed-control-script-and-the-robot-control-script">Integration the heatbed control script and the robot control script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adjusting-the-sampling-rate-in-these-two-components-or-using-the-multiprocessing">1. Adjusting the sampling rate in these two components or using the multiprocessing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#integrating-the-visualization-gui">2. Integrating the visualization GUI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dynamic-change-the-set-variable-target-temperature-in-the-heatbed-control-program">Dynamic change the set variable (target temperature) in the heatbed control program</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Wastebot</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="Heatbed_master.html">Heatbed</a> &raquo;</li>
+      
+    <li>Additional improvements (Software)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/docs/H4.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="additional-improvements-software">
+<h1>Additional improvements (Software)<a class="headerlink" href="#additional-improvements-software" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="integration-the-heatbed-control-script-and-the-robot-control-script">
+<h2>Integration the heatbed control script and the robot control script<a class="headerlink" href="#integration-the-heatbed-control-script-and-the-robot-control-script" title="Permalink to this headline">¶</a></h2>
+<p>Currently, the heatbed control script and the robot control script are separated.
+At a result, there are two RAMPS board and two Arduino Mega.
+This setup is convenient to development, but you might think that we want to integrate these components in future.</p>
+<p>Here, I will list up the two obstacles to integrate these components and suggest some draft solutions.</p>
+<div class="section" id="adjusting-the-sampling-rate-in-these-two-components-or-using-the-multiprocessing">
+<h3>1. Adjusting the sampling rate in these two components or using the multiprocessing<a class="headerlink" href="#adjusting-the-sampling-rate-in-these-two-components-or-using-the-multiprocessing" title="Permalink to this headline">¶</a></h3>
+<p>Currently, we&#8217;re using one sampling rate(10.0Hz) in the heatbed control script. This rate is used to measuring temperature, setting the power of heatbed, and visualizing these values. In other words, the main loop in the heatbed scrip is runing at this sampling rate.</p>
+<p>However, I suspect that the robot control script use the other sampling rate. In robot control script, we&#8217;re using multiple jupyter notebook cells and an Qt widget for dynamic visualization. Thus, I suspect that robot control script use the different sampling rate for the control section and the visualize section.</p>
+<p>Therefore, if we want to integrate the heatbet control script and the robot control script, I think you have to choose one from the following two options.</p>
+<ul class="simple">
+<li>option1: Adjusting the sampling rate in these two components</li>
+<li>option2: Using the multiprocessing</li>
+</ul>
+<p>The option1 is very simple way to solve this problem. If you choose this option, you have to choose only one sampling rate and use it every section in script. I show the concept of this option in Fig1.</p>
+<div class="figure" id="id1">
+<img alt="../_images/Fig1.svg" src="../_images/Fig1.svg" /><p class="caption"><span class="caption-text">Fig1: The concept of the option1.</span></p>
+</div>
+<p>The option2 is more complex way to solove this problem, but it&#8217;s more flexible than option1. I show the concept of this option in Fig2.</p>
+<div class="figure" id="id2">
+<img alt="../_images/Fig2.svg" src="../_images/Fig2.svg" /><p class="caption"><span class="caption-text">Fig2: The concept of the option2.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that you can&#8217;t use the multithreading in Python because of the GIL (Global Interpreter Lock). Thus, if you want to choose the option2, you must use the multiprocessing. In the multiprocessing, the memory spaces for each process are separated, so you might have to think the method for sharing some variables in some processes.</p>
+</div>
+<p>The comparison between option1 and option2 is as follows.</p>
+<ul class="simple">
+<li>Advantage of option1<ul>
+<li>You can implement it comparatively easy at first.</li>
+<li>You don&#8217;t have to know the multiprocessing of Python.</li>
+</ul>
+</li>
+<li>Disadvantage of option1<ul>
+<li>If you need to add the additional component to this system in future, total system will become more complex. (Your code may become the spaghetti code.)</li>
+</ul>
+</li>
+<li>Advantage of option2<ul>
+<li>You can separate and encapsulate the components in this system.</li>
+<li>At a result, you can add the additional component comparatively easily.</li>
+</ul>
+</li>
+<li>Disadvantage of option2<ul>
+<li>You have to know the multiprocessing of Python.</li>
+<li>Your first implementation will be more hard task.</li>
+<li>The multiprocessing require more calculation ability (CPU and RAM).</li>
+<li>If you want to share some variables in one process with the other process, you have to think the sharing method.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="integrating-the-visualization-gui">
+<h3>2. Integrating the visualization GUI<a class="headerlink" href="#integrating-the-visualization-gui" title="Permalink to this headline">¶</a></h3>
+<p>Currently, for dynamic visualization, we&#8217;re using the Qt widget in the robot control script and interactive figure in jupyter notebook in the heatbed control script. However, if you want to integrate these scripts, I think you should aloso integrate the visualization GUI. There are multiple jupyter notebook cells in the robot control script, so I think the interactive figure in jupyter notebook will not work wll in the integrated script. (It&#8217;s related to the cells and loops in jupyter notebook. Generally, you can&#8217;t run the multiple cells in one notebook simultaneously.)</p>
+<p>Therefore, I think you should use only Qt widget for dynamic visualization in the integrated script.</p>
+</div>
+</div>
+<div class="section" id="dynamic-change-the-set-variable-target-temperature-in-the-heatbed-control-program">
+<h2>Dynamic change the set variable (target temperature) in the heatbed control program<a class="headerlink" href="#dynamic-change-the-set-variable-target-temperature-in-the-heatbed-control-program" title="Permalink to this headline">¶</a></h2>
+<p>Currently, you can&#8217;t change dynamically the set variable, in other words target temperature, in the PID control section of the heatbed control program, although the PID control class supports the set variable change.</p>
+<p>Thus, if you implement the authentic GUI (ex. PyQt) or the webGUI and stop using the jupyter notebook, you can dynamically chage the target temperature in the heatbed control program.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="H3.html" class="btn btn-neutral" title="Additional improvements (Hardware)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Wastebot team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

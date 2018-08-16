@@ -1,0 +1,148 @@
+Additional improvements (Hardware)
+==================================
+    
+Replacing the power supply wire and its terminals
+-------------------------------------------------
+
+Currently, we're using the red and black thick wires for connecting the heatbed, RAMPS board and the power supply.
+Its cross sectional area is 3.0mm\ :sup:`2`\. Following are its details.
+
+* :download:`Datasheet of these wire <0900766b81513710.pdf>`
+* `Black wire web page in shopping site <https://uk.rs-online.com/web/p/automotive-wire/1225886/>`_
+* `Red wire web page in shopping site <https://uk.rs-online.com/web/p/automotive-wire/1225889/>`_
+
+However, these wire are too thick to use present heatbed system. At first, I thought that I must split the current from the power supply into the current for the heatbed and the current for the motors. Thus, I selected the wire which can supply over 17A current. However, currently, we're using the power supply box which contains the terminal block, so we can split the current at the inside of the power supply box. Therefore, the max currnet which is sent by the wire is 11A.
+
+Hence, following wires are more useful to our heatbed system. (Its cross sectional area is 2.0mm\ :sup:`2`\. Following are its details.)
+
+* :download:`Datasheet of these wire <0900766b81513704.pdf>`
+* `New black wire web page in shopping site <https://uk.rs-online.com/web/p/automotive-wire/1225876/>`_
+* `New red wire web page in shopping site <https://uk.rs-online.com/web/p/automotive-wire/1225880/>`_
+
+In addition, if you use these new wires, you can use `the new insulated crimp bootlace ferrule (TE Connectivity, 1-966067-6) <https://uk.rs-online.com/web/p/crimp-bootlace-ferrules/1361897/>`_. If you use this ferrule to connect the wire to the euroblock on the RAMPS board, the connection at the euroblock become safer. (Unfortunately, present wire is too thick to use with these ferrule.)
+
+.. figure:: ferrule_euroblock.svg
+
+   Fig1: Insulated crimp bootlace ferrule(left) and Euroblock(right)
+
+
+Replacing the thermistor
+------------------------
+
+Currently, we're using the uninsulated thermistor. (This thermistor is the almost same model at the original 3D printer kit.)  
+
+.. figure:: thermistor1.jpg
+   :scale: 50
+
+   Fig2: Current thermistor (uninsulated)
+
+* :download:`Datasheet of present thermistor <0900766b813c1e9d.pdf>`
+* `Present thermistor web page in shopping site <https://uk.rs-online.com/web/p/thermistors/7691931/>`_
+
+However, in our experimnet environment, we must insulate thermistors. Otherwiew, the leak current will occur between the thermistors and aluminium plate on the heatbed. To make matters worse, if we don't insulate thermistors, we can't use these thermistors near the liquid. Therefore, currently, we're using the PVC tape to insulate the thermistors, but that is the cause of instability in measuring.
+
+Thus, I think we should use the following new thermistor.
+
+.. figure:: thermistor2.jpg
+   :scale: 50
+
+   Fig3: New thermistor (insulated)
+
+* :download:`Datasheet of new thermistor <NTC_Mini_sensors_S861-1317170.pdf>`
+* `New thermistor web page in shopping site <https://www.mouser.co.uk/ProductDetail/EPCOS-TDK/B57861S0104F040?qs=sGAEpiMZZMuBd0%252bwiCVS2xplhE4Sa0XN4YkdFac%2fWp8=>`_
+
+
+Note that this new thermistor is **not** the waterproof thermistor, so if you want to measure the temperature of the liquid directly, you must choose the other parts.
+
+
+Thermal limiter for the heatbed 
+-------------------------------
+
+Currently, there are some protections for electrical accidents. For example, the resettable fuses in the power supply, insulated wires, insulated terminals, terminal blocks, and kapton tape on the heatbed. However, there is no protection for the overheat of the heatbed except the PID control program. Although you can easily set the static limit temperature in the heatbed control script, if the thermistor gets out the place or the USB cable between the arduino and the host computer is disconnected, you will lose the tharmal control of the heatbed and the overheat will occur.
+
+Therefore, some other protection for the overheat might be required. Here, I suggest the two draft solutions.
+
+1.Thermal fuse
+~~~~~~~~~~~~~~
+
+First option is using the thermal fuse. When the thermal fuse detects the temperature which is over the T \ :sub:`f`\  (rated functioning temperature), inside component of the thermal fuse melts and the current is shutted down.
+
+.. figure:: thermal_fuse_image.gif
+
+   Fig4: Thermal fuse (http://www.uchihashi.co.jp/en/support/detail/about-thermal-cutoff.php)
+
+.. important::
+   Note that the thermal fuse for AC and the thermal fuse for DC are **not** same electrical components. The thermal fuse for DC have to prevent the electric arc, but the thermal fuse for AC don't have to do so because there are OV points in the AC current.
+
+Unfortunately, I couldn't find out the actual product suitable for our system except in the some company web sites in Japan and Alibaba.com. (However, the products in the some company web sites in Japan and Alibaba.com have a liitle high T \ :sub:`f`\  , about 130°.)
+
+Following is the requirement for the thermal fuse in our system.
+
+1. DC support
+
+2. Axial or radial type (Because we must bring these components into contact with the heatbed directly.)
+
+3. Its rating currnet must be over 11A.
+
+4. Its rating voltage must be over 12V.
+
+5. Its T \ :sub:`f`\  is suitable for our system.
+
+Therefore, if you want to choose this option for thermal protection, I think that you have to find out the suitable thermal fuse by contacting some companies. Alternatively, you can also purchase the chinese product at Alibaba.com and use it for our system after some test.
+
+**<Reference links** (*There is no need to stick to these links.*) **>**
+
+* `Product in Uchihashi Estec Co., Ltd. web site <http://www.uchihashi.co.jp/en/product/fuse_item_37.php>`_
+
+* `Contact form in Uchihashi Estec Co., Ltd. web site <http://www.uchihashi.co.jp/en/contact/>`_
+
+* `Product list in TAMURA Corp. web site <https://www.tamura-ss.co.jp/jp/products/electronic_components/download/thermal_links/pdf/axialtype.pdf>`_
+
+* `Contact information of the the thermal product of TAMURA Corp. <https://www.tamura-ss.co.jp/en/products/electronic_components/category/thermal_links/inquiry.html>`_
+
+
+2. DC power relay and PTC thermistor 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Second option is using the DC power relay and PTC thermistor. When the temperature of the PTC thermistor exceeds the T \ :sub:`s`\  (switch temperature), its resistance will rapidly increase, so that you can use this component to detect the limit temperature. The DC power relay is the component for switching high DC current in a circuit.
+
+Following is one of the DC power relay suitable for our system. (Its contact configuration is SPNO, Single-Pole Normally Open.)
+
+* :download:`Datasheet of the DC power relay <0900766b81420805.pdf>`
+* `DC power relay web page in shopping site <https://uk.rs-online.com/web/p/non-latching-relays/6838719/>`_
+
+.. figure:: DC_power_relay.jpg
+
+   Fig5: DC power relay
+
+Following is one of the PTC thermistor for temperature sensor. (Its sensing temperature	is 60°C.)
+
+* `PTC thermistor web page in shopping site <https://uk.rs-online.com/web/p/thermistors/7855775/>`_
+* `PTC thermistor web page in its company <https://www.murata.com/en-global/products/productdetail?cate=luPTCforTempeSenso&partno=PTFL04BH222Q2N34B0&intcid5=com_xxx_xxx_cmn_hd_xxx>`_
+
+.. figure:: Positor.jpg
+
+   Fig6: PTC thermistor for temperature sensor
+
+I think you can use these components to construct the thermal limiter circuit for the heatbed. However, if you choose this option, you have to design the new circuit for thermal limit unlike the thermal fuse case.
+
+The comparison between option1 and option2 is as follows.
+
+* Advantage of option1
+
+  - You can implement it comparatively easy at first.
+  - You don't have to design new thermal limiter circuit. 
+
+* Disadvantage of option1
+
+  - I think you can't choose your favorite T \ :sub:`f`\  of the thermal fuse.
+  - The thermal fuse is the disposable component.
+
+* Advantage of option2
+  
+  - You can use DC power relay and PTC thermistor repeatedly.
+  - You can choose your favorite  T \ :sub:`s`\  of the PTC thermistor for temperature sensor.
+
+* Disadvantage of option2
+  
+  - You have to design the new circuit for thermal limit. 

@@ -1,0 +1,10 @@
+Heatbed
+=======
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   Additional improvements (Hardware)
+

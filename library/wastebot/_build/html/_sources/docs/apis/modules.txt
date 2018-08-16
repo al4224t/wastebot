@@ -1,0 +1,7 @@
+wastebot
+========
+
+.. toctree::
+   :maxdepth: 4
+
+   wastebot
