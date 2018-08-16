@@ -10,6 +10,12 @@ Welcome to Wastebot's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+.. automodule:: shaker
+   :members:
+.. automodule:: pipette
+   :members:
+
+
 
 
 Indices and tables

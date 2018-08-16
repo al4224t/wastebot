@@ -9,9 +9,12 @@ Welcome to Wastebot's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-   
-   .. automodule:: shaker
-   .. automodule:: pipette
+
+.. automodule:: shaker
+   :members:
+.. automodule:: pipette
+   :members:
+
 
 
 

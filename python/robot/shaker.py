@@ -94,8 +94,8 @@ class Shaker(object):
 		self.current_position = 0
 		
 	def shake(self, shake_angle, n_shakes, interval_angle, n_sets):
-		for x in range(0, n_sets)
-			for y in range(0, n_shakes)
+		for x in range(0, n_sets):
+			for y in range(0, n_shakes):
 				self.rotate(shake_angle)
 				self.rotate(-shake_angle)
 			self.rotate(interval_angle)
