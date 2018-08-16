@@ -1,8 +1,17 @@
+.DS_Store
+._*
 /python/*
 /library/commanduino/docs
 /library/commanduino/readme.md
+/library/wastebot/docs/*
 !/python/robot
 !/python/procedures
 !/python/documentation
 !/python/011_How to run wastebot_with-shaking_and_auto-stop.ipynb
-
+!/python/Calculate Steinhart-Hart Coefficients.ipynb
+!/python/heatbed_control_arduino.json
+!/python/How to control the heatbed .ipynb
+!/python/How to control the heatbed manually.ipynb
+!/python/Simulate control of the heatbed.ipynb
+!/library/wastebot/docs/*.rst
+!/library/wastebot/docs/apis/*.rst
