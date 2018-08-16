@@ -55,8 +55,8 @@ class Robot(object):
 		#self.z = Axis(self.cmdMng.Z, zaxis['mm_per_step'], zaxis['min'], zaxis['max'])
 		#self.xy = MultiAxis(self.x, self.y)
 		#self.xyz = MultiAxis(self.x, self.y, self.z)
-		#self.p = Pipette(Axis(self.cmdMng.P, paxis['ul_per_step'], paxis['min'], paxis['max']), paxis['min'], paxis['max'])
-		self.s = Shaker(self.cmdMng.S, saxis['deg_per_step'], saxis['min'], saxis['max'])
+		self.p = Pipette(Axis(self.cmdMng.P, paxis['ul_per_step'], paxis['min'], paxis['max']), paxis['min'], paxis['max'])
+		#self.s = Shaker(self.cmdMng.S, saxis['deg_per_step'], saxis['min'], saxis['max'])
 		'''Initialize arena'''
 		self.arena = self.arena_from_configfile()
 		self.tools = self.extract_dict_from_dict(self.arena, 'tools')

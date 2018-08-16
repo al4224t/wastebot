@@ -84,12 +84,12 @@
         "reverted_switch": true,
         "enabled_acceleration": true,
         "speed": 6000,
-        "homing_speed": 1000,
+        "homing_speed": 250,
         "max_speed": 6000,
         "acceleration": 2000
       },
       "axis": {
-		"deg_per_step": 0.1125,
+		"deg_per_step": 0.225,
 		"min": -100000,
 		"max": 100000
       }
