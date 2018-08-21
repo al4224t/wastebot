@@ -50,13 +50,13 @@ class Robot(object):
 	def __init__(self, config, xaxis=DEFAULT_XYZ_AXIS, yaxis=DEFAULT_XYZ_AXIS, zaxis=DEFAULT_XYZ_AXIS, paxis=DEFAULT_P_AXIS, saxis=DEFAULT_S_AXIS):
 		'''Initialize parts of robot'''
 		self.cmdMng = CommandManager.from_config(config)
-		#self.x = Axis(self.cmdMng.X, xaxis['mm_per_step'], xaxis['min'], xaxis['max'])
-		#self.y = Axis(self.cmdMng.Y, yaxis['mm_per_step'], yaxis['min'], yaxis['max'])
-		#self.z = Axis(self.cmdMng.Z, zaxis['mm_per_step'], zaxis['min'], zaxis['max'])
-		#self.xy = MultiAxis(self.x, self.y)
-		#self.xyz = MultiAxis(self.x, self.y, self.z)
+		self.x = Axis(self.cmdMng.X, xaxis['mm_per_step'], xaxis['min'], xaxis['max'])
+		self.y = Axis(self.cmdMng.Y, yaxis['mm_per_step'], yaxis['min'], yaxis['max'])
+		self.z = Axis(self.cmdMng.Z, zaxis['mm_per_step'], zaxis['min'], zaxis['max'])
+		self.xy = MultiAxis(self.x, self.y)
+		self.xyz = MultiAxis(self.x, self.y, self.z)
 		self.p = Pipette(Axis(self.cmdMng.P, paxis['ul_per_step'], paxis['min'], paxis['max']), paxis['min'], paxis['max'])
-		#self.s = Shaker(self.cmdMng.S, saxis['deg_per_step'], saxis['min'], saxis['max'])
+		self.s = Shaker(self.cmdMng.S, saxis['deg_per_step'], saxis['min'], saxis['max'])
 		'''Initialize arena'''
 		self.arena = self.arena_from_configfile()
 		self.tools = self.extract_dict_from_dict(self.arena, 'tools')
@@ -66,7 +66,7 @@ class Robot(object):
 		'''Tracking parameters'''
 		self.liquid_height = 0
 		'''Home robot axes'''
-		#self.home()
+		self.home()
 
 		
 	## CONFIG

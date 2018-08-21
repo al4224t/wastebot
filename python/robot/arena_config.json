@@ -2,8 +2,8 @@
     "medium": [20,20,80],
     "culture1": [40,20,80],
     "culture2": [60,20,80],
-    "tip_bin_opening": [330,330,20],
-    "tip_bin_ending": [330,340,5],
+    "tip_bin_opening": [26,535,40],
+    "tip_bin_ending": [26,535,0],
     "tools": {
         "pipette": [-20,-20,0]
     },

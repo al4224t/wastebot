@@ -61,7 +61,7 @@ class Pipette(object):
         self.wait_until_idle()
 
         position = self.volume_to_position(volume_in_uL)
-        self.axis.move_to(position, wait=wait, force=True)
+        self.axis.move_to(position, wait=wait)
         self.current_volume = volume_in_uL
 
     def aspirate(self, volume_in_uL, wait=True):
