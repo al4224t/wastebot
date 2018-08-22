@@ -7,6 +7,7 @@
 !/python/robot
 !/python/procedures
 !/python/documentation
+!/python/XYZ_Pipette_Shaker_Test.ipynb
 !/python/011_How to run wastebot_with-shaking_and_auto-stop.ipynb
 !/python/Calculate Steinhart-Hart Coefficients.ipynb
 !/python/heatbed_control_arduino.json
