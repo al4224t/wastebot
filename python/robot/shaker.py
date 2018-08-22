@@ -91,18 +91,19 @@ class Shaker(object):
 		#move to this angle e.g. ...-720, -360, 0, 360, 720...
 		self.rotate_to(nearest_home)
 		#make this the new zero point
+		self.linear_actuator.set_current_position(0)
 		self.current_position = 0
 		
-	def shake(self, shake_angle, n_shakes, interval_angle, n_sets):
+	def shake(self, shake_angle, n_shakes, interval_angle, n_sets, shake_speed=6000, interval_speed=250, acceleration=12000):
+		self.acceleration(acceleration)
 		for x in range(0, n_sets):
 			for y in range(0, n_shakes):
+				self.speed(shake_speed)
 				self.rotate(shake_angle)
 				self.rotate(-shake_angle)
-			self.speed(1000)
+			self.speed(interval_speed)
 			self.rotate(interval_angle)
-			self.speed(6000)
 		self.zero()
-		
 
 	def rotate_to(self, angle_in_degrees, wait=True, force=False):
 		"""
@@ -128,10 +129,12 @@ class Shaker(object):
 	def speed(self, steps_per_sec):
 		self.wait_until_idle
 		self.linear_actuator.set_max_speed(steps_per_sec)
+		self.stored_speed = steps_per_sec
 		
 	def acceleration(self, steps_per_sec_sq):
 		self.wait_until_idle
 		self.linear_actuator.set_acceleration(steps_per_sec_sq)
+		self.stored_acceleration = steps_per_sec_sq
 
 	def stop(self):
 		"""
