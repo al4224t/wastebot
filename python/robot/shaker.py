@@ -1,8 +1,8 @@
 """
-    coding: UTF-8
-    Python 2.7
+	coding: UTF-8
+	Python 2.7
 
-    Shaker.py
+	Shaker.py
 	
 	July 2018:
 	New class based off the axis class. Modified to suit a rotational device rather than a linear device.
@@ -98,7 +98,9 @@ class Shaker(object):
 			for y in range(0, n_shakes):
 				self.rotate(shake_angle)
 				self.rotate(-shake_angle)
+			self.speed(1000)
 			self.rotate(interval_angle)
+			self.speed(6000)
 		self.zero()
 		
 
@@ -121,20 +123,7 @@ class Shaker(object):
 			self.current_position = angle_in_degrees
 
 	def rotate(self, delta_angle_in_degrees, wait=True, force=False):
-		"""
-		Moves the linear actuator.
-
-		Args:
-			delta_position_in_unit (int): The amount to move.
-
-			wait (bool): Wait until the linear actuator is idle, default set to True.
-
-			force (bool):Force the movement, default set to False.
-
-		"""
-
-		#current_position = self.get_current_position()
-		self.rotate_to(self.current_position + delta_angle_in_degrees, wait=wait, force=force)
+		self.rotate_to(self.current_position + delta_angle_in_degrees)
 		
 	def speed(self, steps_per_sec):
 		self.wait_until_idle
